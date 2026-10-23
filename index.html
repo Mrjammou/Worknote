@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Daily Organizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>My Daily Organizer ✨</h1>
+    <p>Plan your day. Get things done.</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>➕ Add a Task</h2>
+      <form id="taskForm">
+        <input id="taskInput" type="text"
+          placeholder="What do you need to do?" required maxlength="200">
+
+        <div class="form-row">
+          <input id="taskDate" type="date" required>
+          <button type="submit">Add Task</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>📋 My Tasks</h2>
+
+      <div class="filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="today">Today</button>
+        <button class="filter" data-filter="pending">Pending</button>
+        <button class="filter" data-filter="completed">Completed</button>
+      </div>
+
+      <p id="taskSummary" class="muted"></p>
+      <ul id="taskList" class="task-list"></ul>
+    </section>
+
+    <section class="card">
+      <div class="calendar-header">
+        <button id="prevMonth" aria-label="Previous month">❮</button>
+        <h2 id="monthYear"></h2>
+        <button id="nextMonth" aria-label="Next month">❯</button>
+      </div>
+
+      <div class="weekdays">
+        <span>Mon</span><span>Tue</span><span>Wed</span>
+        <span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+      </div>
+
+      <div id="calendarDays" class="calendar-days"></div>
+
+      <p class="muted">Tap a date to see its tasks.</p>
+      <div id="selectedDateTasks"></div>
+    </section>
+  </main>
+
+  <footer>One step at a time. You've got this! 💙</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
